@@ -1,21 +1,21 @@
 package org.game.main;
 
 /**
- * ƒƒCƒ“ƒNƒ‰ƒXB
+ * ãƒ¡ã‚¤ãƒ³ã‚¯ãƒ©ã‚¹ã€‚
  * @author ishida
  *
  */
 public class Main {
 	
-	/**	ƒQ[ƒ€ƒ‚[ƒhiGUIj */
+	/**	ã‚²ãƒ¼ãƒ ãƒ¢ãƒ¼ãƒ‰ï¼ˆGUIï¼‰ */
 	private static String MODE_GUI = "-gui:on";
 	
 	/**
-	 * ƒƒCƒ“ƒƒ\ƒbƒhBƒQ[ƒ€‚ÌƒƒCƒ“‚Ì—¬‚ê‚ðŽi‚éB
+	 * ãƒ¡ã‚¤ãƒ³ãƒ¡ã‚½ãƒƒãƒ‰ã€‚ã‚²ãƒ¼ãƒ ã®ãƒ¡ã‚¤ãƒ³ã®æµã‚Œã‚’å¸ã‚‹ã€‚
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// ˆø”‚È‚µ‚ÍƒRƒ“ƒ\[ƒ‹ƒAƒvƒŠ‚Æ‚µ‚Ä‹N“®‚·‚éB
-		// ˆø”‚ª-gui:on‚Ìê‡‚ÍAGUIƒ‚[ƒh‚Æ‚µ‚Ä‹N“®‚·‚éB
+		// å¼•æ•°ãªã—ã¯ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã‚¢ãƒ—ãƒªã¨ã—ã¦èµ·å‹•ã™ã‚‹ã€‚
+		// å¼•æ•°ãŒ-gui:onã®å ´åˆã¯ã€GUIãƒ¢ãƒ¼ãƒ‰ã¨ã—ã¦èµ·å‹•ã™ã‚‹ã€‚
 	}
 }

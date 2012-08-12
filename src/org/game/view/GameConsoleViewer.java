@@ -1,20 +1,29 @@
 package org.game.view;
 
-public class GameConsoleViewer implements GameViewer{
+public class GameConsoleViewer implements GameViewer {
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void drawOpening() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void drawTitle() {
-		System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
-		System.out.println("■■■　　　　Game　for Console Ver　　　　　　■■■");
-		System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+		System.out.println("笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆");
+		System.out.println("笆笆笆縲縲縲縲Game縲for Console Ver縲縲縲縲縲縲笆笆笆");
+		System.out.println("笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆笆");
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void drawTitleMenu() {
 		System.out.println("1.Start New Game");
@@ -24,28 +33,40 @@ public class GameConsoleViewer implements GameViewer{
 		System.out.print("Number? : ");
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void drawMenu() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void drawMessage() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void drawField() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void drawCharaAnimation() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

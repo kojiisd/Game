@@ -1,7 +1,7 @@
 package org.game.logic;
 
 /**
- * ゲームモードを割り振るディスパッチャ
+ * 繧ｲ繝ｼ繝繝｢繝ｼ繝峨ｒ蜑ｲ繧頑険繧九ョ繧｣繧ｹ繝代ャ繝√Ε
  * 
  * @author ishida-note
  * 
