@@ -3,6 +3,7 @@ package org.game.main;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.game.logic.GameModeDispatcher;
 import org.game.model.GameContext;
 import org.game.view.GameConsoleViewer;
 import org.game.view.GameGuiViewer;
@@ -18,12 +19,15 @@ public class Main {
 
 	/** ゲームモード（GUI） */
 	private static String MODE_GUI = "-gui:on";
-
+	
 	/** Usageの文字列 */
 	private static String USAGE = "Usage: Main.java <gameMode>";
 
 	/** ゲームコンテキスト */
 	private GameContext gameContext_ = null;
+	
+	/** ディスパッチャ */
+	private GameModeDispatcher gameModeDispatcher = new GameModeDispatcher();
 
 	/** ゲームの表示をどうするのか選択するためのMap */
 	private Map<String, GameViewer> viewerMap = new HashMap<String, GameViewer>();
