@@ -1,18 +1,31 @@
 package org.game.model;
 
 /**
- * ゲームの状態を管理するクラス。
+ * ゲームの状態、条件を管理するクラス。
  * 
  * @author ishida
  * 
  */
 public class GameContext {
 
+	/** ノーマル状態 */
+	public static int GAME_MODE_NORMAL = 0;
+
+	/** デバッグ状態 */
+	public static int GAME_MODE_DEBUG = 1;
+
 	/** ゲームモード　0:normal 1:debug */
 	private int gameMode = 0;
 
 	/**
-	 * コンストラクタ
+	 * デフォルトコンストラクタ。
+	 */
+	public GameContext() {
+		// do nothing
+	}
+
+	/**
+	 * コンストラクタ。
 	 * 
 	 * @param gameMode ゲームモード
 	 */
