@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.game.exception.GameException;
 import org.game.logic.GameModeDispatcher;
 import org.game.model.GameContext;
 import org.game.util.MessageUtil;
@@ -21,16 +22,13 @@ public class Main {
 
 	/** ゲームモード（GUI） */
 	private static String MODE_GUI = "-gui:on";
-	
-	/** Usageの文字列 */
-	private static String USAGE = "Usage: Main.java <gameMode>";
-	
+
 	/** ロガー */
 	private static Logger log__ = Logger.getLogger(Main.class);
 
 	/** ゲームコンテキスト */
 	private GameContext gameContext_ = null;
-	
+
 	/** ディスパッチャ */
 	private GameModeDispatcher gameModeDispatcher = new GameModeDispatcher();
 
@@ -49,23 +47,31 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		log__.info(MessageUtil.getMessage("game.common.start"));
-		Main main = new Main();
-		main.start(args);
+		try {
+			Main main = new Main();
+			main.start(args);
+		} catch (GameException gex) {
+			log__.error(gex.getMessage());
+			log__.info(MessageUtil.getMessage("game.common.end"));
+		} catch (Throwable th) {
+			log__.error(th.getMessage());
+			log__.info(MessageUtil.getMessage("game.common.end"));
+		}
 	}
 
 	/**
 	 * ゲームを開始する。
 	 * 
 	 * @param args 起動引数
+	 * @param throws GameException
 	 */
-	private void start(String[] args) {
+	private void start(String[] args) throws GameException {
 		// 引数なしはコンソールアプリとして起動する。
 		// 引数が-gui:onの場合は、GUIモードとして起動する。
 		// 起動時にデバッグモードかどうかの判定を行う。
 
 		if (args == null || args.length == 0) {
-			System.err.println(USAGE);
-			return;
+			throw new GameException(MessageUtil.getMessage("game.common.usage"));
 		}
 
 		int gameMode = 0;
@@ -74,8 +80,8 @@ public class Main {
 			try {
 				tempGameMode = Integer.valueOf(args[1]);
 			} catch (NumberFormatException nfex) {
-				System.err.println(USAGE);
-				nfex.printStackTrace();
+				throw new GameException(
+						MessageUtil.getMessage("gaem.common.usage"), nfex);
 			}
 
 			gameMode = tempGameMode;

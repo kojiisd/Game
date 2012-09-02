@@ -3,7 +3,6 @@
  */
 package org.game.util;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.MessageFormat;
@@ -32,7 +31,9 @@ public class MessageUtil {
 
 	static {
 		try {
-			prop.load(new FileInputStream(FILE_PREFIX + ".properties"));
+
+			prop.load(ClassLoader
+					.getSystemResourceAsStream((FILE_PREFIX + ".properties")));
 		} catch (FileNotFoundException ex) {
 			System.err.println("ファイルの読み込みに失敗しました。起動処理を終了します。");
 			ex.printStackTrace();
