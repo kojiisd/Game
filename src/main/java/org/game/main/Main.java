@@ -3,8 +3,10 @@ package org.game.main;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
 import org.game.logic.GameModeDispatcher;
 import org.game.model.GameContext;
+import org.game.util.MessageUtil;
 import org.game.view.GameConsoleViewer;
 import org.game.view.GameGuiViewer;
 import org.game.view.GameViewer;
@@ -22,6 +24,9 @@ public class Main {
 	
 	/** Usageの文字列 */
 	private static String USAGE = "Usage: Main.java <gameMode>";
+	
+	/** ロガー */
+	private static Logger log__ = Logger.getLogger(Main.class);
 
 	/** ゲームコンテキスト */
 	private GameContext gameContext_ = null;
@@ -43,6 +48,7 @@ public class Main {
 	 * @param args 起動引数
 	 */
 	public static void main(String[] args) {
+		log__.info(MessageUtil.getMessage("game.common.start"));
 		Main main = new Main();
 		main.start(args);
 	}
