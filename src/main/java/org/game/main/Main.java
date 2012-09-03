@@ -38,6 +38,9 @@ public class Main {
 	public Main() {
 		this.viewerMap.put("gui", new GameGuiViewer());
 		this.viewerMap.put("console", new GameConsoleViewer());
+
+		this.gameContext_ = new GameContext();
+		this.gameModeDispatcher = new GameModeDispatcher();
 	}
 
 	/**
@@ -63,7 +66,7 @@ public class Main {
 	 * ゲームを開始する。
 	 * 
 	 * @param args 起動引数
-	 * @param throws GameException
+	 * @throws GameException 共通例外
 	 */
 	private void start(String[] args) throws GameException {
 		// 引数なしはコンソールアプリとして起動する。
