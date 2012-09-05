@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import org.game.exception.GameException;
 import org.game.logic.GameModeDispatcher;
 import org.game.model.GameContext;
+import org.game.util.LoggerUtil;
 import org.game.util.MessageUtil;
 import org.game.view.GameConsoleViewer;
 import org.game.view.GameGuiViewer;
@@ -24,7 +25,7 @@ public class Main {
 	private static String MODE_GUI = "-gui:on";
 
 	/** ロガー */
-	private static Logger log__ = Logger.getLogger(Main.class);
+	private static Logger log__ = LoggerUtil.getLogger(Main.class);
 
 	/** ゲームコンテキスト */
 	private GameContext gameContext_ = null;

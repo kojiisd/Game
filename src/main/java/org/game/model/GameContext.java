@@ -1,7 +1,11 @@
 package org.game.model;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
- * ゲームの状態、条件を管理するクラス。
+ * ゲーム全体の状態、条件を管理するクラス。
  * 
  * @author ishida
  * 
@@ -17,11 +21,13 @@ public class GameContext {
 	/** ゲームモード　0:normal 1:debug */
 	private int gameMode = 0;
 
+	/** 敵情報をキーと一緒に持つMap（フィールド名をキーとするなどしてそのマップごとの敵のリストを持つ） */
+	private Map<String, List<Integer>> enemyListMap = new HashMap<String, List<Integer>>();;
+
 	/**
 	 * デフォルトコンストラクタ。
 	 */
 	public GameContext() {
-		// do nothing
 	}
 
 	/**
@@ -31,6 +37,14 @@ public class GameContext {
 	 */
 	public GameContext(int gameMode) {
 		this.gameMode = gameMode;
+
+	}
+
+	/**
+	 * 初期化処理。
+	 */
+	private void init() {
+		// TODO:キーごとの敵の作成をファイルから読み込む形式で行う。（YamlのBin形式）
 	}
 
 	/**
