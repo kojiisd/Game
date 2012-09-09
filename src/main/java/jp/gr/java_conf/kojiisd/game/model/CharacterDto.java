@@ -6,12 +6,12 @@ package jp.gr.java_conf.kojiisd.game.model;
 import java.util.Map;
 
 /**
- * キャラクタを示すクラス。
+ * キャラクタDtoを示すクラス。
  * 
- * @author ishida
+ * @author kojiisd
  * 
  */
-public class Character {
+public class CharacterDto {
 
 	/** 名前 */
 	private String name_;

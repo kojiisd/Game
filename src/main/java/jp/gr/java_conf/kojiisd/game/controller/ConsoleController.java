@@ -6,18 +6,18 @@ package jp.gr.java_conf.kojiisd.game.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import jp.gr.java_conf.kojiisd.game.exception.GameException;
+import javax.swing.JOptionPane;
+
+import jp.gr.java_conf.kojiisd.game.exception.GameCommonException;
+import jp.gr.java_conf.kojiisd.game.model.CharacterDto;
 import jp.gr.java_conf.kojiisd.game.model.GameContext;
 import jp.gr.java_conf.kojiisd.game.util.LoggerUtil;
 import jp.gr.java_conf.kojiisd.game.util.MessageUtil;
 import jp.gr.java_conf.kojiisd.game.view.GameViewer;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 
-/**
- * @author ishida
- * 
- */
 public class ConsoleController implements GameController {
 
 	/** ロガー */
@@ -47,7 +47,7 @@ public class ConsoleController implements GameController {
 
 		// 出現する敵の選定
 		// TODO:DEBUGモードの時には自分で選べる
-		List<Character> charaList = selectEnemy(this.gameContext_);
+		List<CharacterDto> charaList = selectEnemy(this.gameContext_);
 
 		// 現れた敵をビューに渡し敵キャラと戦闘画面を表示する。
 		if (this.gameContext_.getGameMode() == GameContext.GAME_MODE_DEBUG) {
@@ -72,11 +72,11 @@ public class ConsoleController implements GameController {
 	 * 指定されたゲームモードに切り替える。
 	 * 
 	 * @param gameMode
-	 * @throws GameException 共通例外
+	 * @throws GameCommonException 共通例外
 	 */
-	public void changeMode(int gameMode) throws GameException {
+	public void changeMode(int gameMode) throws GameCommonException {
 		if (this.gameContext_ == null) {
-			throw new GameException("game.common.noContext");
+			throw new GameCommonException("game.common.noContext");
 		}
 
 		this.gameContext_.setGameMode(gameMode);
@@ -88,19 +88,52 @@ public class ConsoleController implements GameController {
 	 * @param gameContext ゲームコンテキスト
 	 * @return キャラリスト
 	 */
-	private List<Character> selectEnemy(GameContext gameContext) {
+	private List<CharacterDto> selectEnemy(GameContext gameContext) {
 		if (gameContext == null) {
-			throw new GameException(
+			throw new GameCommonException(
 					MessageUtil.getMessage("game.common.noContext"));
 		}
 
-		List<Character> charaList = new ArrayList<Character>();
+		List<CharacterDto> charaList = new ArrayList<CharacterDto>();
+		String[] enemyIdStrArray = null;
 
 		if (gameContext.getGameMode() == GameContext.GAME_MODE_DEBUG) {
 			// TODO: 自分で敵キャラを選択するダイアログを出現させる。
+			enemyIdStrArray = selectEnemyIdArraytForDebug();
+		} else {
+			// TODO: 敵キャラを条件を考慮して（サイズ、マップ、出現数）出現させる。
 		}
 
 		return charaList;
+	}
+
+	/**
+	 * 条件を考慮して、敵IDを指定する。
+	 * 
+	 * @param gameContext ゲームコンテキスト
+	 * @return 敵IDの文字列配列
+	 */
+	private String[] selectEnemyIdArray(GameContext gameContext) {
+		// gameContextのnullチェックは事前にされているため不要。
+
+		// TODO: 実装
+		return new String[] { "1", "2", "3" };
+
+	}
+
+	/**
+	 * 敵IDの指定をダイアログから取得する。（デバッグ用）
+	 * 
+	 * @return 敵IDの文字列配列
+	 */
+	private String[] selectEnemyIdArraytForDebug() {
+		String resultStr = JOptionPane.showInputDialog("敵キャラIDをカンマ区切りで指定すること。");
+		if (StringUtils.isBlank(resultStr)) {
+			return null;
+		}
+		String[] resultStrArray = resultStr.split(",");
+
+		return resultStrArray;
 	}
 
 	/**

@@ -7,7 +7,7 @@ import org.apache.log4j.Logger;
 /**
  * ゲームモードを割り振るディスパッチャ
  * 
- * @author ishida-note
+ * @author kojiisd
  * 
  */
 public class GameModeDispatcher {
@@ -21,6 +21,11 @@ public class GameModeDispatcher {
 	public GameModeDispatcher() {
 	}
 
+	/**
+	 * ゲームコンテキストによって処理を振り分ける。
+	 * 
+	 * @param gameContext ゲームコンテキスト
+	 */
 	public void dispatch(GameContext gameContext) {
 
 		if (gameContext == null) {

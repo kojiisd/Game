@@ -3,7 +3,7 @@ package jp.gr.java_conf.kojiisd.game.main;
 import java.util.HashMap;
 import java.util.Map;
 
-import jp.gr.java_conf.kojiisd.game.exception.GameException;
+import jp.gr.java_conf.kojiisd.game.exception.GameCommonException;
 import jp.gr.java_conf.kojiisd.game.logic.GameModeDispatcher;
 import jp.gr.java_conf.kojiisd.game.model.GameContext;
 import jp.gr.java_conf.kojiisd.game.util.LoggerUtil;
@@ -17,7 +17,7 @@ import org.apache.log4j.Logger;
 /**
  * メインクラス。
  * 
- * @author ishida
+ * @author kojiisd
  * 
  */
 public class Main {
@@ -55,7 +55,7 @@ public class Main {
 		try {
 			Main main = new Main();
 			main.start(args);
-		} catch (GameException gex) {
+		} catch (GameCommonException gex) {
 			log__.error(gex.getMessage());
 			log__.info(MessageUtil.getMessage("game.common.end"));
 		} catch (Throwable th) {
@@ -68,15 +68,15 @@ public class Main {
 	 * ゲームを開始する。
 	 * 
 	 * @param args 起動引数
-	 * @throws GameException 共通例外
+	 * @throws GameCommonException 共通例外
 	 */
-	private void start(String[] args) throws GameException {
+	private void start(String[] args) throws GameCommonException {
 		// 引数なしはコンソールアプリとして起動する。
 		// 引数が-gui:onの場合は、GUIモードとして起動する。
 		// 起動時にデバッグモードかどうかの判定を行う。
 
 		if (args == null || args.length == 0) {
-			throw new GameException(MessageUtil.getMessage("game.common.usage"));
+			throw new GameCommonException(MessageUtil.getMessage("game.common.usage"));
 		}
 
 		int gameMode = 0;
@@ -85,7 +85,7 @@ public class Main {
 			try {
 				tempGameMode = Integer.valueOf(args[1]);
 			} catch (NumberFormatException nfex) {
-				throw new GameException(
+				throw new GameCommonException(
 						MessageUtil.getMessage("gaem.common.usage"), nfex);
 			}
 

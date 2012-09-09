@@ -4,7 +4,7 @@
 package jp.gr.java_conf.kojiisd.game.view;
 
 /**
- * @author ishida
+ * @author kojiisd
  *
  */
 public class GameGuiViewer implements GameViewer {

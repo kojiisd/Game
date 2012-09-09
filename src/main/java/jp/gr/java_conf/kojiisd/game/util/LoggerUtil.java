@@ -6,7 +6,9 @@ package jp.gr.java_conf.kojiisd.game.util;
 import org.apache.log4j.Logger;
 
 /**
- * @author ishida
+ * ログに関するユーティリティクラス。
+ * 
+ * @author kojiisd
  * 
  */
 public class LoggerUtil extends Logger {

@@ -4,7 +4,7 @@
 package jp.gr.java_conf.kojiisd.game.controller;
 
 /**
- * @author ishida
+ * @author kojiisd
  * 
  */
 interface GameController {

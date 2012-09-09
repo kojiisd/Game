@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * ゲーム全体の状態、条件を管理するクラス。
  * 
- * @author ishida
+ * @author kojiisd
  * 
  */
 public class GameContext {
