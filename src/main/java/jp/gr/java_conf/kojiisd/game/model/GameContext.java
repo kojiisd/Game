@@ -18,6 +18,9 @@ public class GameContext {
 	/** デバッグ状態 */
 	public static int GAME_MODE_DEBUG = 1;
 
+	/** キャラクタデータ用ファイルパス */
+	public static String DATA_CHACTER_PATH = "character.dat";
+
 	/** ゲームモード　0:normal 1:debug */
 	private int gameMode = 0;
 

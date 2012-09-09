@@ -1,7 +1,7 @@
 /**
  * 
  */
-package jp.gr.java_conf.kojiisd.game.controller;
+package jp.gr.java_conf.kojiisd.game.logic;
 
 /**
  * @author kojiisd

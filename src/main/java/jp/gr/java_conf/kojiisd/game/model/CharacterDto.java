@@ -13,8 +13,17 @@ import java.util.Map;
  */
 public class CharacterDto {
 
+	/** キャラクタID */
+	private int id_;
+	
 	/** 名前 */
 	private String name_;
+	
+	/** 最大HP */
+	private int maxHp_;
+	
+	/** 最大MP */
+	private int maxMp_;
 
 	/** HP */
 	private int hp_;
@@ -39,6 +48,48 @@ public class CharacterDto {
 
 	/** 属性 */
 	private int attribute_;
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id_;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		id_ = id;
+	}
+
+	/**
+	 * @return the maxHp
+	 */
+	public int getMaxHp() {
+		return maxHp_;
+	}
+
+	/**
+	 * @param maxHp the maxHp to set
+	 */
+	public void setMaxHp(int maxHp) {
+		maxHp_ = maxHp;
+	}
+
+	/**
+	 * @return the maxMp
+	 */
+	public int getMaxMp() {
+		return maxMp_;
+	}
+
+	/**
+	 * @param maxMp the maxMp to set
+	 */
+	public void setMaxMp(int maxMp) {
+		maxMp_ = maxMp;
+	}
 
 	/**
 	 * @return the name

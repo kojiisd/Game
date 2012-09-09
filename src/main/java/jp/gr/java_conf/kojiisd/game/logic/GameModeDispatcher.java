@@ -1,6 +1,7 @@
 package jp.gr.java_conf.kojiisd.game.logic;
 
 import jp.gr.java_conf.kojiisd.game.model.GameContext;
+import jp.gr.java_conf.kojiisd.game.util.MessageUtil;
 
 import org.apache.log4j.Logger;
 
@@ -29,7 +30,7 @@ public class GameModeDispatcher {
 	public void dispatch(GameContext gameContext) {
 
 		if (gameContext == null) {
-			System.err.println("ゲーム状態が指定されていません。中止します。");
+			log__.error(MessageUtil.getMessage("game.common.noContext"));
 			return;
 		}
 
