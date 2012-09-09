@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.game.controller;
+package jp.gr.java_conf.kojiisd.game.controller;
 
 /**
  * @author ishida

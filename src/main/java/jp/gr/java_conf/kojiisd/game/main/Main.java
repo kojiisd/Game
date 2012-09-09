@@ -1,17 +1,18 @@
-package org.game.main;
+package jp.gr.java_conf.kojiisd.game.main;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import jp.gr.java_conf.kojiisd.game.exception.GameException;
+import jp.gr.java_conf.kojiisd.game.logic.GameModeDispatcher;
+import jp.gr.java_conf.kojiisd.game.model.GameContext;
+import jp.gr.java_conf.kojiisd.game.util.LoggerUtil;
+import jp.gr.java_conf.kojiisd.game.util.MessageUtil;
+import jp.gr.java_conf.kojiisd.game.view.GameConsoleViewer;
+import jp.gr.java_conf.kojiisd.game.view.GameGuiViewer;
+import jp.gr.java_conf.kojiisd.game.view.GameViewer;
+
 import org.apache.log4j.Logger;
-import org.game.exception.GameException;
-import org.game.logic.GameModeDispatcher;
-import org.game.model.GameContext;
-import org.game.util.LoggerUtil;
-import org.game.util.MessageUtil;
-import org.game.view.GameConsoleViewer;
-import org.game.view.GameGuiViewer;
-import org.game.view.GameViewer;
 
 /**
  * メインクラス。

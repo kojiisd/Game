@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.game.util;
+package jp.gr.java_conf.kojiisd.game.util;
 
 import org.apache.log4j.Logger;
 

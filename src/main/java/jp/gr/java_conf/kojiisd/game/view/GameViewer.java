@@ -1,4 +1,4 @@
-package org.game.view;
+package jp.gr.java_conf.kojiisd.game.view;
 
 public interface GameViewer {
 	

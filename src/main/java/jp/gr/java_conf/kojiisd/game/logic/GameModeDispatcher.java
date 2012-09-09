@@ -1,7 +1,8 @@
-package org.game.logic;
+package jp.gr.java_conf.kojiisd.game.logic;
+
+import jp.gr.java_conf.kojiisd.game.model.GameContext;
 
 import org.apache.log4j.Logger;
-import org.game.model.GameContext;
 
 /**
  * ゲームモードを割り振るディスパッチャ

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.game.exception;
+package jp.gr.java_conf.kojiisd.game.exception;
 
 /**
  * @author ishida

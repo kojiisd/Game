@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.game.model;
+package jp.gr.java_conf.kojiisd.game.model;
 
 import java.util.Map;
 

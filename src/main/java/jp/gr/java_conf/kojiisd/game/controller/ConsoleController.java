@@ -1,16 +1,18 @@
 /**
  * 
  */
-package org.game.controller;
+package jp.gr.java_conf.kojiisd.game.controller;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import jp.gr.java_conf.kojiisd.game.exception.GameException;
+import jp.gr.java_conf.kojiisd.game.model.GameContext;
+import jp.gr.java_conf.kojiisd.game.util.LoggerUtil;
+import jp.gr.java_conf.kojiisd.game.util.MessageUtil;
+import jp.gr.java_conf.kojiisd.game.view.GameViewer;
+
 import org.apache.log4j.Logger;
-import org.game.exception.GameException;
-import org.game.model.GameContext;
-import org.game.util.MessageUtil;
-import org.game.view.GameViewer;
 
 /**
  * @author ishida
@@ -19,7 +21,7 @@ import org.game.view.GameViewer;
 public class ConsoleController implements GameController {
 
 	/** ロガー */
-	private static Logger log__ = Logger.getLogger(ConsoleController.class);
+	private static Logger log__ = LoggerUtil.getLogger(ConsoleController.class);
 
 	/** ゲームコンテキスト */
 	private GameContext gameContext_;
@@ -48,6 +50,11 @@ public class ConsoleController implements GameController {
 		List<Character> charaList = selectEnemy(this.gameContext_);
 
 		// 現れた敵をビューに渡し敵キャラと戦闘画面を表示する。
+		if (this.gameContext_.getGameMode() == GameContext.GAME_MODE_DEBUG) {
+			// ダイアログからカンマ区切りで敵のIDを割り振る
+		} else {
+			// 通常はマップと敵キャラのサイズから出現敵キャラと出現数を決定する。
+		}
 
 		// ユーザの入力待ち状態にする。
 		// GUIモードのことも考慮し、キー情報をすべてコントローラに返す。
@@ -88,7 +95,7 @@ public class ConsoleController implements GameController {
 		}
 
 		List<Character> charaList = new ArrayList<Character>();
-		
+
 		if (gameContext.getGameMode() == GameContext.GAME_MODE_DEBUG) {
 			// TODO: 自分で敵キャラを選択するダイアログを出現させる。
 		}
